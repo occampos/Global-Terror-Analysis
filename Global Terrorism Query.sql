@@ -174,6 +174,7 @@ WHERE cte.country_id = dim_countries.country_id;
 
 SELECT * FROM dim_countries
 ORDER BY rank_terror_attacks;
+
 -- create dimension region table 
 SELECT 
 	DISTINCT region_id,
