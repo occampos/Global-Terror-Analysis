@@ -1,5 +1,4 @@
 # Global Terrorism Analysis
-## Olimpio Christopher Campos
 
 Project Description:
 
