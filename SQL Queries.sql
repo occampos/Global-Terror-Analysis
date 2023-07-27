@@ -403,6 +403,59 @@ ADD PRIMARY KEY (hostkid_outcome_id);
 SELECT * FROM dim_hostkid_outcome
 ORDER BY hostkid_outcome_id;
 
+-- create dimension group names table
+DROP TABLE IF EXISTS dim_group_names;
+SELECT	
+	ROW_NUMBER() OVER(ORDER BY COUNT(incident_id)DESC) AS group_name_id,
+	group_name,
+	COUNT(incident_id) as n_terror_attacks,
+	SUM(n_kills) as n_deaths,
+	ROW_NUMBER() OVER(ORDER BY COUNT(incident_id)DESC) AS rank_n_terror_attacks,
+	ROW_NUMBER() OVER(ORDER BY SUM(n_kills)DESC) AS rank_n_deaths
+INTO dim_group_names
+FROM global_terrorism
+GROUP BY group_name;
+
+ALTER TABLE dim_group_names
+ALTER COLUMN group_name_id INT NOT NULL;
+
+ALTER TABLE dim_group_names
+ADD PRIMARY KEY (group_name_id);
+
+SELECT * FROM dim_group_names;
+
+-- add group name id column to global terrorism table 
+ALTER TABLE global_terrorism
+ADD group_name_id INT;
+
+WITH cte AS  
+	(SELECT *
+	FROM dim_group_names)
+UPDATE global_terrorism
+SET global_terrorism.group_name_id = cte.group_name_id
+FROM cte
+WHERE global_terrorism.group_name = cte.group_name;
+
+SELECT * FROM global_terrorism;
+
+-- group names validation
+SELECT
+	DISTINCT a.group_name,
+	group_name_id
+FROM global_terrorism a JOIN dim_group_names b on a.group_name=b.group_name
+ORDER BY group_name_id ASC;
+
+SELECT
+	group_name_id,
+	group_name,
+	count(incident_id),
+	sum(n_kills)
+FROM global_terrorism
+GROUP BY
+	group_name_id,
+	group_name
+ORDER BY 1 ASC;
+
 -- create fact global terrorism table
 DROP TABLE IF EXISTS fact_global_terrorism;
 SELECT 
@@ -423,7 +476,7 @@ SELECT
 	attack_type3_id,
 	target_type_id,
 	target_subtype_id,
-	group_name,
+	group_name_id,
 	motive,
 	guncertain1 as guncertain,
 	individual,
