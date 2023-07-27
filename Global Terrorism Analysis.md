@@ -17,14 +17,18 @@ The primary objective of this project is to extract valuable insights from an un
 
 ### Global View
 Showcases visuals regarding Terrorism on a global scale.
-
 ![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/1Global%20View.jpg?raw=true)
 
 ### Country View
 Showcases visualizations regarding Terrorism by country. The countries with the most Terror Attacks were *Iraq*, *Pakistan* and *Afghanistan* respectvely. 
+
+**Iraq**
 ![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/2Country%20View%20Iraq.jpg)
+**Pakistan**
 ![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/3Country%20View%20Pakistan.jpg)
+**Afghanistan**
 ![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/4Country%20View%20Afghanistan.jpg)
+**United States**
 ![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/5Country%20View%20United%20States.jpg)
 
 ### Group View
