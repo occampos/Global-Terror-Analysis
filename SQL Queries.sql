@@ -438,6 +438,34 @@ WHERE global_terrorism.group_name = cte.group_name;
 
 SELECT * FROM global_terrorism;
 
+-- adding prevalent country column
+ALTER TABLE dim_group_names
+ADD prevalent_country VARCHAR(100);
+
+WITH cte AS 
+	(SELECT
+		b.group_name_id,
+		b.group_name,
+		c.country as prevalent_country,
+		COUNT(incident_id) AS n_terror_attacks,
+		ROW_NUMBER() OVER(PARTITION BY b.group_name ORDER BY COUNT(incident_id)DESC) AS rn
+	FROM
+		global_terrorism a JOIN dim_group_names b ON a.group_name = b.group_name JOIN
+		dim_countries c ON a.country_id = c.country_id
+	WHERE b.group_name <> 'Unknown'
+	GROUP BY
+		b.group_name_id,
+		b.group_name,
+		c.country)
+UPDATE dim_group_names
+SET dim_group_names.prevalent_country = cte.prevalent_country
+FROM CTE
+WHERE 
+	dim_group_names.group_name_id = cte.group_name_id AND
+	rn = 1;
+
+SELECT * FROM dim_group_names;
+
 -- group names validation
 SELECT
 	DISTINCT a.group_name,
