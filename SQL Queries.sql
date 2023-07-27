@@ -476,7 +476,7 @@ SELECT
 	attack_type3_id,
 	target_type_id,
 	target_subtype_id,
-	group_name_id,
+	group_name,
 	motive,
 	guncertain1 as guncertain,
 	individual,
