@@ -1,12 +1,12 @@
 # Global Terrorism Analysis
+## Olimpio Christopher Campos
 
 Project Description:
 
-The Data Cleaning and Visualization Dashboard project is a comprehensive data analytics initiative aimed at transforming raw, messy data into insightful visualizations for enhanced decision-making. The project utilizes SQL for data cleaning, transformation, and preparation, while Power BI is employed to create a dynamic and interactive dashboard that presents the data in a visually appealing and informative manner.
+The project manipulates a dataset regarding Terror Attacks across the globe. SQL is utilized for data cleaning, transformation, and preparation, while Power BI is employed to create a dynamic and interactive dashboard that presents the data in a visually appealing and informative manner.
 
 Objective:
-The primary objective of this project is to extract valuable insights from complex and unstructured datasets by employing robust data cleaning techniques using SQL and presenting the processed data through intuitive visualizations using Power BI.
-
+The primary objective of this project is to extract valuable insights from unstructured datasets by employing data cleaning techniques using SQL and presenting the processed data through intuitive visualizations using Power BI.
 Key Phases:
 
 Data Assessment and Collection:
@@ -27,13 +27,10 @@ Power BI, a powerful business intelligence tool, is utilized to build an interac
 Dashboard Interactivity and User-Friendliness:
 The Power BI dashboard is designed to be interactive, allowing users to explore the data from different perspectives. Filters, slicers, and drill-down features enable users to gain deeper insights and answer specific questions, enhancing the overall user experience.
 
-Report Generation and Sharing:
-Once the dashboard is complete, the project team generates reports summarizing the data findings and the methods used for data cleaning and visualization. These reports are shared with stakeholders and decision-makers, providing them with actionable insights derived from the processed data.
 
 Benefits:
 
-Enhanced data quality through rigorous SQL-based data cleaning.
-Improved decision-making through intuitive and interactive visualizations.
-Accessible insights for stakeholders, promoting data-driven actions.
-Time-saving and efficient data preparation using SQL and Power BI automation.
-The successful execution of this project empowers the organization with a comprehensive data analytics tool that transforms complex data into meaningful visualizations, enabling better strategic planning, data-driven decision-making, and improved business performance.
+- Enhanced data quality through rigorous SQL-based data cleaning.
+- Time-saving and efficient data preparation using SQL and Power BI automation.
+- Improved inisght regarding global terrorism through intuitive, dynamic, and interactive visualizations.
+- The successful execution of this project highlights the ability to use comprehensive data analytics tools that transforms complex data into meaningful visualizations, enabling better strategic planning, data-driven decision-making, and improved business performance.
