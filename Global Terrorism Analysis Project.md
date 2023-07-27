@@ -2,7 +2,7 @@
 
 *Project Description:*
 
-  The project manipulates a dataset regarding Terror Attacks across the globe. SQL Server is utilized for data cleaning, transformation, and preparation, while Power BI is employed to create a dynamic and interactive dashboard that presents the data in a visually appealing and informative manner.
+  The project manipulates a dataset regarding Terror Attacks across the globe. **SQL Server** is utilized for data cleaning, transformation, and preparation, while **Power BI** is employed to create a dynamic and interactive dashboard that presents the data in a visually appealing and informative manner.
 
 *Objective:*
 
@@ -15,5 +15,13 @@ The primary objective of this project is to extract valuable insights from an un
 
 + Power BI Dashboard Creation: Tables are used to aggregate and summarize the data, creating visualization. This step involves calculating measures, applying filters, and arranging the data into a format suitable for Power BI's visualizations. The dashboard includes a variety of visualizations, such as charts, graphs, and tables. The Power BI dashboard is designed to be interactive, allowing users to explore the data from different perspectives. Filters, slicers, and drill-down features enable users to gain deeper insights and answer specific questions, enhancing the overall user experience.
 
-## Global Breakdown
-![](Dashboard Screenshots/1Global View.jpg)
+### Global View
+Showcases visuals regarding Terrorism on a global scale.
+
+![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/1Global%20View.jpg?raw=true)
+
+### Country View
+Showcases visualizations regarding Terrorism by country. The countries with the most Terror Attacks were *Iraq*, *Pakistan* and *Afghanistan* respectvely. 
+
+
+### Group View
