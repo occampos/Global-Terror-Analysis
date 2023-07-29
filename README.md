@@ -36,3 +36,6 @@ Showcases Terrorism by Terror Group. The groups with the most Terror Attacks wer
 
 **Taliban**
 ![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/6Group%20ViewTaliban.jpg)
+
+**ISIL**
+![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/7Group%20View%20ISIL.jpg)
