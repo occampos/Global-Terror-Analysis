@@ -2,7 +2,7 @@
 
 *Project Description:*
 
-  The project manipulates a dataset regarding Terror Attacks across the globe. **SQL Server** is utilized for data cleaning, transformation, and preparation, while **Power BI** is employed to create a dynamic and interactive dashboard that presents the data in a visually appealing and informative manner.
+  This project manipulates a dataset regarding Terror Attacks across the globe. **SQL Server** is utilized for data cleaning, transformation, and preparation, while **Power BI** is employed to create a dynamic and interactive dashboard that presents the data in a visually appealing and informative manner.
 
 *Objective:*
 
