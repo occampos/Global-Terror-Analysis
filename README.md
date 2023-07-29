@@ -16,11 +16,11 @@ The primary objective of this project is to extract valuable insights from an un
 + Power BI Dashboard Creation: Tables are used to aggregate and summarize the data, creating visualization. This step involves calculating measures, applying filters, and arranging the data into a format suitable for Power BI's visualizations. The dashboard includes a variety of visualizations, such as charts, graphs, and tables. The Power BI dashboard is designed to be interactive, allowing users to explore the data from different perspectives. Filters, slicers, and drill-down features enable users to gain deeper insights and answer specific questions, enhancing the overall user experience.
 
 ### Global View
-Showcases visuals regarding Terrorism on a global scale.
+Showcases Terrorism on a global scale.
 ![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/1Global%20View.jpg?raw=true)
 
 ### Country View
-Showcases visualizations regarding Terrorism by country. The countries with the most Terror Attacks were *Iraq*, *Pakistan* and *Afghanistan* respectvely. 
+Showcases Terrorism by country. The countries with the most Terror Attacks were *Iraq*, *Pakistan* and *Afghanistan* respectvely. 
 
 **Iraq**
 ![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/2Country%20View%20Iraq.jpg)
@@ -32,3 +32,4 @@ Showcases visualizations regarding Terrorism by country. The countries with the 
 ![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/5Country%20View%20United%20States.jpg)
 
 ### Group View
+Showcases Terrorism by Terror Group. The groups with the most Terror Attacks were *Taliban* and *ISIL* respectively.
