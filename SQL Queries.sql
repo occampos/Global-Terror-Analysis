@@ -6,7 +6,7 @@ SELECT *
 INTO global_terrorism
 FROM global_terrorism_initial;
 
-SELECT * FROM global_terrorism;
+SELECT * FROM global_terrorism_initial;
 
 -- create dimension date table 
 CREATE TABLE dim_dates
@@ -23,10 +23,10 @@ SELECT TOP 18992
 FROM sys.objects AS a CROSS JOIN sys.objects AS b CROSS JOIN sys.objects AS c;
 
 UPDATE dim_dates
-set	year			= YEAR(date),
-	month			= MONTH(date),
-	day				= DAY(date),
-	weekday_num		= DATEPART(WEEKDAY, date),
+set	year		= YEAR(date),
+	month		= MONTH(date),
+	day		= DAY(date),
+	weekday_num	= DATEPART(WEEKDAY, date),
 	weekday_name	= DATEname(WEEKDAY, date);
 
 select * from dim_dates;
@@ -97,7 +97,7 @@ WHERE
 	country_id IS NULL OR
 	region_id IS NULL;
 
--- drop columns uneeded to data exploration or vague and unclear
+-- drop columns uneeded from data exploration or vague and unclear
 ALTER TABLE global_terrorism
 DROP COLUMN 
 	country2_id, 
@@ -113,10 +113,10 @@ WHERE prop_value < 0;
 
 -- create primary key column ordered by date
 ALTER TABLE global_terrorism
-add incident_id INT;
+ADD incident_id INT;
 
 ALTER TABLE global_terrorism
-add beans_id INT IDENTITY PRIMARY KEY;
+ADD beans_id INT IDENTITY PRIMARY KEY;
 
 WITH cte AS  
 	(SELECT
@@ -241,7 +241,7 @@ ORDER BY city_id;
 
 -- create city_id column in global_terrorism table
 ALTER TABLE global_terrorism
-ADD city_id int;
+ADD city_id INT;
 
 WITH cte AS  
 	(SELECT *
@@ -438,7 +438,7 @@ WHERE global_terrorism.group_name = cte.group_name;
 
 SELECT * FROM global_terrorism;
 
--- adding prevalent country column
+-- adding prevalent country column to group names table
 ALTER TABLE dim_group_names
 ADD prevalent_country VARCHAR(100);
 
@@ -652,6 +652,42 @@ WHERE n_kills IS NULL;
 SELECT * FROM fact_deadliest_terror_attacks
 ORDER BY n_kills DESC;
 
+-- create dealiest terror attacks by group table
+DROP TABLE IF EXISTS fact_deadliest_attacks_by_group;
+WITH CTE AS (
+	SELECT 
+		group_name_id,
+		incident_id,
+		country_id,
+		date,
+		city_id,
+		n_kills,
+		summary,
+		ROW_NUMBER() OVER(PARTITION BY group_name_id ORDER BY n_kills DESC) AS rank
+	FROM global_terrorism
+	GROUP BY 
+		date,
+		group_name_id,
+		incident_id,
+		country_id,
+		city_id,
+		n_kills,
+		summary
+	)
+SELECT 
+	group_name_id,
+	incident_id,
+	country_id,
+	date,
+	city_id,
+	n_kills,
+	summary
+INTO fact_deadliest_attacks_by_group
+FROM CTE WHERE rank = 1;
+
+SELECT * FROM fact_deadliest_attacks_by_group
+ORDER BY n_kills DESC
+
+
 -- 
 SELECT * FROM global_terrorism;
-
