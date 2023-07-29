@@ -33,3 +33,6 @@ Showcases Terrorism by country. The countries with the most Terror Attacks were 
 
 ### Group View
 Showcases Terrorism by Terror Group. The groups with the most Terror Attacks were *Taliban* and *ISIL* respectively.
+
+**Taliban**
+![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/6Group%20ViewTaliban.jpg)
