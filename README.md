@@ -17,25 +17,25 @@ The primary objective of this project is to extract valuable insights from an un
 
 ### Global View
 Showcases Terrorism on a global scale.
-![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/1Global%20View.jpg?raw=true)
+![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/01%20Global%20View.jpg)
 
 ### Country View
 Showcases Terrorism by country. The countries with the most Terror Attacks were *Iraq*, *Pakistan* and *Afghanistan* respectvely. 
 
 **Iraq**
-![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/2Country%20View%20Iraq.jpg)
+![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/02%20Country%20View%20Iraq.jpg)
 **Pakistan**
-![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/3Country%20View%20Pakistan.jpg)
+![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/03%20Country%20View%20Pakistan.jpg)
 **Afghanistan**
-![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/4Country%20View%20Afghanistan.jpg)
+![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/04%20Country%20View%20Afghanistan.jpg)
 **United States**
-![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/5Country%20View%20United%20States.jpg)
+![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/05%20Country%20View%20United%20States.jpg)
 
 ### Group View
 Showcases Terrorism by Terror Group. The groups with the most Terror Attacks were *Taliban* and *ISIL* respectively.
 
 **Taliban**
-![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/6Group%20ViewTaliban.jpg)
+![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/06%20Group%20View%20Taliban.jpg)
 
-**ISIL**
-![](https://raw.githubusercontent.com/occampos/global-terrorism-analysis/main/Dashboard%20Screenshots/7Group%20View%20ISIL.jpg)
+**Islamic State of Iraw and The Levant (ISIL)**
+![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/07%20Group%20View%20ISIL.jpg)
