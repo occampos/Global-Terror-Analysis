@@ -2,11 +2,11 @@
 
 *Project Description:*
 
-  This project manipulates a dataset focused on Terror Attacks across the globe. **SQL Server** is utilized for data cleaning, transformation, and preparation, while **Power BI** is employed to create a dynamic and interactive dashboard that presents the data in a visually appealing and informative manner.
+  This project manipulates a dataset focused on Terror Attacks across the globe. Utilizing **SQL** in **SQL Server** for data cleaning, transformation, and preparation, while **DAX** in **Power BI** is employed to create a dynamic and interactive dashboard that presents the data in a visually appealing and informative manner.
 
 *Objective:*
 
-The primary objective of this project is to extract valuable insights from an unstructured dataset by employing data cleaning techniques using **SQL** in **SQL Server** and presenting the processed data through intuitive visualizations using **DAX** in **Power BI**.
+The primary objective of this project is to extract valuable insights from an unstructured dataset by employing data cleaning techniques using **SQL** and presenting the processed data through intuitive visualizations using **Power BI**.
 
 *Key Phases:*
 + Initial Data Review in Excel: The process begins by utilizing Excel to roughly isolate pertinent information from a vast dataset, which is later imported into SQL Server for further analysis and processing.
@@ -37,5 +37,5 @@ Showcases Terrorism by Terror Group. The groups with the most Terror Attacks wer
 **Taliban**
 ![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/06%20Group%20View%20Taliban.jpg)
 
-**Islamic State of Iraw and The Levant (ISIL)**
+**Islamic State of Iraq and The Levant (ISIL)**
 ![](https://github.com/occampos/global-terrorism-analysis/blob/main/Dashboard%20Screenshots/07%20Group%20View%20ISIL.jpg)
