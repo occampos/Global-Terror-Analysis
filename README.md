@@ -1,4 +1,4 @@
-[Portfolio Page](https://occampos.github.io/OlimpioCampos.github.io/globalterror.html)
+[Portfolio Page with Interactive Dashboard](https://occampos.github.io/OlimpioCampos.github.io/globalterror.html)
 
 # Global Terrorism Analysis
 
