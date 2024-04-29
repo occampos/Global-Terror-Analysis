@@ -1,0 +1,177 @@
+﻿DEFINE 
+---- MODEL MEASURES BEGIN ----
+MEASURE aaMeasures[Deadliest Terror Attack City] = 
+    "City: " & MAX(fact_deadliest_attacks_by_country[city]) 
+MEASURE aaMeasures[Deadliest Terror Attack Country] = 
+    "Deadliest Terror Attack in " & [Selected Country]
+MEASURE aaMeasures[Deadliest Terror Attack Date] = 
+    " " & MAX(fact_deadliest_attacks_by_country[date])
+    
+MEASURE aaMeasures[Deadliest Terror Attack Deaths] = 
+    "Deaths: " & MAX(fact_deadliest_attacks_by_country[n_kills])
+MEASURE aaMeasures[Group Attacks by Year] = 
+VAR country_count = COUNT(dim_countries[country])
+VAR max_values_to_show = 1
+RETURN
+    IF(
+        country_count > 1,
+        [Selected Group Name] & " Deaths and Terror Attacks by Year",
+        "Terror Attacks in " & [Selected Country] & " by Year"
+)
+MEASURE aaMeasures[Group Deadliest City] = 
+    "City: " &
+    CALCULATE(
+        MAX(dim_cities[city]),
+        FILTER(fact_deadliest_attacks_by_group,fact_deadliest_attacks_by_group[city_id]
+        )
+    )
+MEASURE aaMeasures[Group Deadliest Date] = 
+    " " & MAX(fact_deadliest_attacks_by_group[date])
+MEASURE aaMeasures[Group Deadliest Deaths] = 
+    "Deaths: " & MAX(fact_deadliest_attacks_by_group[n_kills])
+MEASURE aaMeasures[Group Deadliest Group Name] = 
+    "Deadliest Terror Attack by " & [Selected Group Name]
+MEASURE aaMeasures[Group Deadliest Summary] = 
+    CALCULATE(
+        MAX(fact_global_terrorism[summary]),
+        FILTER(fact_deadliest_attacks_by_group,fact_deadliest_attacks_by_group[incident_id]
+        )
+    )
+MEASURE aaMeasures[Kidnappings %] = 
+    COUNT(fact_global_terrorism[hostkid_outcome_id]) / COUNT(fact_all_attack_types[incident_id]) * 100
+MEASURE aaMeasures[Most Deaths 1st and 2nd Attack %] = 
+    FIXED(
+    DIVIDE(
+        (CALCULATE(SUM(fact_global_terrorism[n_kills]),
+            FILTER(
+                dim_attack_types,
+                RANKX(
+                    ALL(dim_attack_types), 
+                    [Sum Deaths]
+                ) = 1
+            )
+        ) +
+        CALCULATE(SUM(fact_global_terrorism[n_kills]),
+            FILTER(
+                dim_attack_types,
+                RANKX(
+                    ALL(dim_attack_types), 
+                    [Sum Deaths]
+                ) = 2
+            )
+        )),
+        SUMX(
+            ALL(dim_target_type[target_type]),
+            [Sum Deaths]
+        )
+    ) * 100,0
+    ) & "%"
+MEASURE aaMeasures[Most Deaths 1st and 2nd Attack Type] = 
+    CALCULATE(MAX(dim_attack_types[attack_type]),
+        FILTER(
+            dim_attack_types,
+            RANKX(
+                ALL(dim_attack_types), 
+                [Sum Deaths]
+            ) = 1
+        )
+    )
+& " Or " &
+    CALCULATE(MAX(dim_attack_types[attack_type]),
+        FILTER(
+            dim_attack_types,
+            RANKX(
+                ALL(dim_attack_types), 
+                [Sum Deaths]
+            ) = 2
+        )
+    )
+MEASURE aaMeasures[Most Deaths by Attack %] = 
+VAR max_kills =
+    MAXX(
+        dim_attack_types,
+        [Sum Deaths]
+    )
+VAR total_kills =
+    SUMX(
+        dim_attack_types,
+        [Sum Deaths]
+    )
+RETURN 
+    FIXED(DIVIDE(max_kills,total_kills) * 100,0) & "% "
+    
+MEASURE aaMeasures[Most Deaths by Attack Statement] = 
+    CALCULATE(
+        MAX(dim_attack_types[attack_type]),
+        FILTER(dim_attack_types,
+            RANKX(ALL(dim_attack_types),
+            [Sum Deaths]
+            ) = 1
+        )
+    )
+MEASURE aaMeasures[Most Deaths by Target %] = 
+VAR max_kills =
+    MAXX(
+        dim_target_type,
+        [Sum Deaths]
+    )
+VAR total_kills =
+    SUMX(
+        dim_target_type,
+        [Sum Deaths]
+    )
+RETURN 
+    FIXED(DIVIDE(max_kills,total_kills) * 100,0) & "% "
+    
+MEASURE aaMeasures[Most Deaths by Target Type] = 
+    CALCULATE(
+        MAX(dim_target_type[target_type]),
+        FILTER(
+            dim_target_type,
+            RANKX(
+                ALL(dim_target_type), 
+                [Sum Deaths]
+            ) = 1
+        )
+    )
+MEASURE aaMeasures[Ranked Deaths by Attack] = 
+    RANKX(ALL(dim_attack_types),[Sum Deaths])
+MEASURE aaMeasures[Selected Country] = 
+    SELECTEDVALUE(
+        dim_countries[country],
+        BLANK())
+MEASURE aaMeasures[Selected Group Name] = 
+    SELECTEDVALUE(
+        dim_group_names[group_name],
+        BLANK())
+MEASURE aaMeasures[Selected Year] = 
+    SELECTEDVALUE(
+        dim_dates[year],
+        BLANK())
+MEASURE aaMeasures[Sum Deaths] = SUM(fact_global_terrorism[n_kills])
+MEASURE aaMeasures[Sum Terror Attacks] = COUNT(fact_global_terrorism[incident_id])
+MEASURE aaMeasures[Title Country] = 
+    "Terrorism Analysis in " & [Selected Country]
+MEASURE aaMeasures[Title Country by City] = 
+VAR country_count = COUNT(dim_countries[country])
+VAR year_count = COUNT(dim_dates[year])
+VAR max_values_to_show = 1
+RETURN
+    IF(
+        country_count > 1,
+        "Terror Attacks Globally by City",
+        "Terror Attacks in " & [Selected Country] & " by City")
+
+MEASURE aaMeasures[Title Country by Year] = 
+VAR country_count = COUNT(dim_countries[country])
+VAR max_values_to_show = 1
+RETURN
+    IF(
+        country_count > 1,
+        "Terror Attacks Globally by Year",
+        "Terror Attacks in " & [Selected Country] & " by Year"
+)
+MEASURE aaMeasures[Title Group Name] = 
+    [Selected Group Name] & " Analysis"
+---- MODEL MEASURES END ----
+
