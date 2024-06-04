@@ -1,4 +1,4 @@
-[Portfolio Page with Interactive Dashboard](https://occampos.github.io/ChristopherCamposData/globalterror.html)
+[Project Page with Interactive Dashboard](https://occampos.github.io/ChristopherCamposData/globalterror.html)
 
 # Global Terrorism Analysis
 
